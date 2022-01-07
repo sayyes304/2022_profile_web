@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Kangsei profile</title>
+
+    <link rel="stylesheet" href="./css/common.css" type="text/css">
+    <link rel="stylesheet" href="./css/animation.css" type="text/css">
+    <style type="text/css">
+        div.wrapper {
+            max-width: 100rem;
+            width: 100rem;
+            padding: 1.5rem 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+        }
+        div.box {
+            display: flex;
+            padding: 3rem 1rem;
+            border-radius: 1.5rem;
+            background-color: #fff;
+            box-shadow: 0 0.4rem 1rem 0 rgb(0 0 0 / 20%), 0 0.4rem 2rem 0 rgb(0 0 0 / 19%);
+            height: 47rem;
+        }
+        div.card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2.5rem;
+            width: 30rem;
+            background: url('./img/wave-haikei.svg') no-repeat 0 0;
+        }
+        div.contents_info {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 3rem;
+        }
+        div.contents_image {
+            width: 17rem;
+            height: 17rem;
+            border-radius: 50%;
+            background-image: url('./img/sherlock.PNG');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            border: 0.5rem solid #fff;
+        }
+        div.contents_info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        span.info_name { 
+            font-family: 'Cairo', sans-serif;
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-shadow: 0.2rem 0.2rem 0.2rem #E1E1E1;
+        }
+        span.info_job, span.info_local {
+            color: #4B4453;
+            font-size: 1.3rem;
+        }
+        div.contents_connect > a {
+            display: block;
+            border-radius: 2rem;
+            /* background: linear-gradient(141deg, rgba(0,174,141,1) 0%, rgba(0,133,139,1) 100%); */
+            background: #FFEECA;
+            color: #4B4453;
+            font-size: 1.2rem;
+            padding: 0.6rem 3rem;
+            transition: linear .2s;
+        }
+        div.contents_connect > a:hover {
+            transform: scale(1.02);
+        }
+
+        /* Introduce Box */
+        div.intro_box {
+            background-color : white;
+            border-radius    : 1.5rem;
+            display          : flex;
+            justify-content  : flex-start;
+            overflow         : hidden;
+            width : calc(100% - 33rem);
+        }
+        div.left_box {
+            border-right : 0.1rem solid #C1C1C1;
+            display      : inline-block;
+            padding      : 1rem;
+            width        : 13rem;
+        }
+        div.tab_btn_box {
+            align-items     : center;
+            display         : flex;
+            flex-direction  : column;
+            justify-content : flex-start;
+        }
+        div.right_box {
+            width: 47rem;
+            padding: 1rem 2rem 1rem 3rem;
+        }
+
+
+        .tab_btn_box {
+            align-items     : center;
+            display         : flex;
+            flex-direction  : column;
+            justify-content : flex-start;
+        }
+
+        .tab_btn_box > input[type='radio'] {
+            display : none;
+        }
+
+        .tab_btn_box > input[type='radio'] + label {
+            border-radius : 0.5rem;
+            color         : #4B4453;
+            cursor        : pointer;
+            display       : inline-block;
+            font-size     : 1.2rem;
+            margin        : 0.5rem 0;
+            padding       : 1rem 1.5rem;
+            width         : 100%;
+        }
+        .tab_btn_box > label > i {
+            padding-right: 0.3rem;
+        }
+
+        .tab_btn_box > input[type='radio'] + label:hover {
+            background-color : hsla(0, 0%, 78%, .2);
+        }
+
+        .tab_btn_box > input[type='radio']:checked + label {
+            background-color : #70A1FF;
+            color            : white;
+        }
+
+        .tab_box {
+            display : none;
+        }
+
+        .aboutme_name > span {
+            color: black;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        span.ul_effect {position: relative;}
+        span.ul_effect::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: .5rem;
+            border-bottom: .3rem solid #70A1FF;
+            width: 11rem;
+        }
+        .aboutme_job {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 1.6rem;
+        }
+        .aboutme_job > span {
+            font-size: 1.5rem;
+            color: #4F4F4F;
+        }
+        .aboutme_comment {margin-bottom: 2.4rem;}
+        .aboutme_comment > span {
+            font-size: 1.3rem;
+            color: #4F4F4F;
+            line-height: 2.2rem;
+        }
+
+        /*모든 자식들 설정*/
+        .btn_wrap > a{
+            display: inline-block; 
+            /*inline-block으로 소극적. 좌우만 사이즈 설정 가능 */
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            color: white;
+            margin: 0 0.8rem 1.6rem 0;
+            border-radius: 0.5rem;
+        }
+        .btn_wrap > a:hover {
+            transform: scale(1.02);
+        }
+        
+        div.contents_title {
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding-left: .5rem;
+            margin-bottom: 1.2rem;
+            border-left: .3rem solid #70A1FF;
+        }
+
+        div.key_skill_wrap {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 2.4rem;
+        }
+
+        .key_skill{
+            display: inline-block;
+            font-size : 1.2rem;
+            color:white;
+            border-radius: 2rem;
+            padding:0.4rem 0.9rem;
+            margin: 0.3rem 0.4rem;
+        }
+
+        div.contents {
+            display: flex; 
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center; 
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        span.content_name {
+            display: block; 
+            font-size: 1.2rem; 
+            text-align: left; 
+            width: 100%; 
+            padding-left: 1rem;
+            padding-bottom: .2rem;
+        }
+        div.bar_border {
+            width: 100%;
+            height: 2rem;
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border-radius: 2rem;
+            text-align: center;
+        
+        }
+        div.bar_fill {
+            height: 2rem;
+            background: linear-gradient(278deg, rgba(124,119,199,1) 0%, rgba(0,190,194,1) 54%, rgba(0,212,255,1) 100%);
+            line-height: 2rem;
+            color: white;
+            transition: all ease .3s;
+        }
+
+        div.resume_download_wrap {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2.4rem;
+            background-color: #F1F1F1;
+            padding: 1rem;
+            border-radius: .5rem;
+        }
+        div.resume_title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        div.resume_box {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+            height: 28rem;
+            overflow: auto;
+        }
+        div.resume_contents {
+            margin-bottom: 2rem;
+        }
+        div.content_info {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2rem;
+            border-bottom: 0.1rem solid #f1f1f1;
+            padding: .5rem;
+        }
+        div.first_floor {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: .5rem;
+        }
+        div.first_floor > span:first-child {
+            font-size: 1.3rem;
+            color: #4054B2;
+            font-weight: bold;
+        }
+        div.first_floor > span:last-child {
+            color: #DA4536;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .btn_download{
+            display: inline-block;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            color:white;
+            background-color: #70A1FF;
+        }
+        
+
+        /* 반응형 웹 디자인 Responsive Web Desing */
+        /* 1. Smart Phone */
+        @media (min-width: 320px) and (max-width:768px){
+            /* 글자크기를 스마트폰에서 봤을 땐 작게보이게 설정 */
+            html, body{font-size : 53%;}
+            /* 좌측 카드만 나오고 나머지는 오른쪽은 나오지 않게 설정 */
+            div.intro_box {display: none;}
+            div.wrapper{
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Profile Box -->
+        <!-- F12 눌러서 확인 가능!!-->
+        <div class="box card">
+            <!-- card profile image -->
+            <div class="contents_image"></div>
+
+            <!-- card profile name&job -->
+            <div class="contents_info">
+                <span class="info_name">KANGSEI</span>
+                <span class="info_job">Software Engineering Student</span>
+            </div>
+
+            <!-- card profile local-->
+            <div class="contents_local">
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="info_local"> Gwang-Ju, South Korea</span>
+            </div>
+
+            <div class="contents_connect">
+                <a>yhs7409@naver.com</a>
+                
+            </div>
+
+
+
+
+
+             <!-- card profile SNS link  -->
+            <div class="contents_sns">
+                <div class="middle">
+                    <a class="snsbtn" href="https://github.com/kangsei" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a class="snsbtn" href="https://www.youtube.com/channel/UCrIZbjAZgVC8SvTCbxs2iPQ" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a class="snsbtn" href="https://www.facebook.com/profile.php?id=100006367518513" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="snsbtn" href="https://www.instagram.com/say_304/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Introduce Box -->
+        <!-- 우측 !! -->
+        <!-- left box = Aboutme Skills... -->
+        <div class="box intro_box">
+            <div class="left_box">
+                <div class="tab_btn_box">
+                    <input type="radio" name="tabmenu" id="tab01" checked>
+                    <label for="tab01"><i class="fab fa-instagram"></i> About Me</label>
+                    <input type="radio" name="tabmenu" id="tab02">
+                    <label for="tab02">Skills</label>
+                    <input type="radio" name="tabmenu" id="tab03">
+                    <label for="tab03">Resume</label>
+                    <input type="radio" name="tabmenu" id="tab04">
+                    <label for="tab04">License</label>
+                    <input type="radio" name="tabmenu" id="tab05">
+                    <label for="tab05">menu2</label>
+                </div>
+            </div>
+    
+            <!--right box = details about menubar-->
+            <div class="right_box">
+                <!--box01 = 1st(About Me) contents, box 02 = Skills ... -->
+                <div class="tab_box box01" style="display: block;">
+                    <div class="aboutme_name">
+                        <span>SEI <span class="ul_effect">KANG</span></span>
+                    </div>
+                    <div class="aboutme_job">
+                        <span>Software Engineering Student</span>
+                    </div>
+                    <div class="aboutme_comment">
+                        <span>Hi, my name is <span class="main-color">Sei Kang</span> and I'm a <span class="main-color">software engineering student</span>. <br> Welcome to my personal website. Do you want to know about me? <br>Check out my <span class='main-color'>online resume</span>.</span>
+                    </div>
+                    <div class="btn_wrap">
+                        <a href='#' class="main-bg-color">Download Resume</a>
+                        <a href='#' class="sub2-bg-color btn_view_resume">View Resume</a> 
+                    </div>
+                </div>
+                <div class="tab_box box02">
+                    <div class="contents_title">Key Skills</div>
+                    <div class="key_skill_wrap">
+                        <span class="key_skill" style="background-color: #EC8940;">VR/AR</span>
+                        <span class="key_skill" style="background-color: #00BEC2;">App Develop</span>
+                    </div>
+
+                    <div class="contents_title">My Skills</div>
+                    <div class="skill_bar_wrap">
+                        <div class="contents">
+                            <span class="content_name">VR/AR</span>
+                            <div class="bar_border">
+                                <div class="bar_fill" style="width: 10%">10%</div>
+                            </div>
+                        </div>    
+
+                        <div class="contents">
+                            <span class="content_name">App Develop</span>
+                            <div class="bar_border">
+                                <div class="bar_fill" style="width: 40%">40%</div>
+                            </div>
+                        </div>   
+                        
+                        <div class="contents">
+                            <span class="content_name">C++</span>
+                            <div class="bar_border">
+                                <div class="bar_fill" style="width: 60%">60%</div>
+                            </div>
+                        </div>    
+
+                        <div class="contents">
+                            <span class="content_name">Java</span>
+                            <div class="bar_border">
+                                <div class="bar_fill" style="width: 60%">60%</div>
+                            </div>
+                        </div>   
+   
+                    </div>
+                </div>
+                <div class="tab_box box03">
+                    <div class="resume_download_wrap">
+                        <div class="resume_title">Online Resume</div>
+                    <a href="#" class="btn_download">Download PDF Version</a>
+                    </div>
+                    
+                    <div class="resume_box">
+                        <!--교육 경력 -->
+                        <div class="resume_contents">                       
+                            <div class="contents_title">교육 경력</div>
+                            <!-- 교육 - 1st paragraph-->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>AI+X 대학생 코딩캠프</span>
+                                    <span>2022.01.05 ~ 07</span>
+                                </div>
+                                <div class="second-floor">
+                                    광주전남지역혁신플랫폼
+                                </div>
+                            </div>
+                            <!-- 교육 - 2nd paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>AR/VR 코딩교육</span>
+                                    <span>2022.01.05 ~ 07</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대학교공학혁신센터
+                                </div>
+                            </div> 
+                        </div>  
+
+                        <!--수상 경력 -->
+                        <div class="resume_contents">
+                            <div class="contents_title">수상 경력</div>
+                            <!-- 수상 - 1st paragraph-->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>AI+X 대학생 코딩캠프</span>
+                                    <span>2022.01.05 ~ 07</span>
+                                </div>
+                                <div class="second-floor">
+                                    광주전남지역혁신플랫폼
+                                </div>
+                            </div>
+                            <!-- 수상 - 2nd paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>AR/VR 코딩교육</span>
+                                    <span>2022.01.05 ~ 07</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대학교공학혁신센터
+                                </div>
+                            </div> 
+                        </div>  
+                    </div>
+                </div>
+                <div class="tab_box box04">
+                    <!--자격증 경력 -->
+                    <div class="resume_contents">
+                        <div class="contents_title">자격증 경력</div>
+                        <!-- 수상 - 1st paragraph-->
+                        <div class="content_info">
+                            <div class="first_floor">
+                                <span>AI+X 대학생 코딩캠프</span>
+                                <span>2022.01.05 ~ 07</span>
+                            </div>
+                            <div class="second-floor">
+                                광주전남지역혁신플랫폼
+                            </div>
+                        </div>
+                        <!-- 수상 - 2nd paragraph -->
+                        <div class="content_info">
+                            <div class="first_floor">
+                                <span>AR/VR 코딩교육</span>
+                                <span>2022.01.05 ~ 07</span>
+                            </div>
+                            <div class="second-floor">
+                                전남대학교공학혁신센터
+                            </div>
+                        </div> 
+                    </div>  
+                </div>
+                <div class="tab_box box05"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).on('click', '.tab_btn_box > input', function () {
+        if ($(this).is(':checked')) {
+            $('.tab_box').css('display', 'none');
+            const id = $(this).attr('id');
+            const num = id.substring(3, 5);
+            const selector = ".box" + num;
+            $(selector).css('display', 'block');
+        }
+    });
+
+    $(document).on('click', '.btn_view_resume', function() {
+        $('#tab03').prop('checked', true);
+        $('.tab_box').css('display', 'none');
+        $('.box03').css('display', 'block');
+
+    });
+</script> 
+</html>
