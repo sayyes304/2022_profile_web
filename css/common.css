@@ -31,17 +31,20 @@ a {
 }
 
 .main-color {
-    color: #70a1ff;
+    color: #78e08f;
+}
+
+.white-color {
+    color: white;
 }
 
 .main-bg-color {
-    background-color: #70a1ff;
+    background-color: #78e08f;
 }
 
 .sub-bg-color {
     background-color: #4F4F4F;
 }
-
 
 
 .sub2-bg-color{

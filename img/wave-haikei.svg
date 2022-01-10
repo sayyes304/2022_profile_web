@@ -1,1 +1,22 @@
-<svg id="visual" viewBox="0 0 300 470" width="300" height="470" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="300" height="470" fill="#ffffff"></rect><path d="M0 152L16.7 143.3C33.3 134.7 66.7 117.3 100 115.5C133.3 113.7 166.7 127.3 200 129.2C233.3 131 266.7 121 283.3 116L300 111L300 0L283.3 0C266.7 0 233.3 0 200 0C166.7 0 133.3 0 100 0C66.7 0 33.3 0 16.7 0L0 0Z" fill="#70a1ff" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px"
+	 height="470px" viewBox="0 0 300 470" enable-background="new 0 0 300 470" xml:space="preserve">
+<g id="visual">
+	<rect x="0" y="0" fill="#FFFFFF" width="300" height="470"/>
+	<path fill="#ADD3FF" d="M0,157l12.5,1.2C25,159.3,50,161.7,75,153s50-28.3,75-41.3s50-19.4,75-16.2s50,15.8,62.5,22.2L300,124V0
+		h-12.5C275,0,250,0,225,0s-50,0-75,0s-50,0-75,0S25,0,12.5,0H0V157z"/>
+</g>
+<g id="Layer_2">
+</g>
+<g id="Layer_3" display="none">
+	
+		<image display="inline" overflow="visible" opacity="0.6" width="427" height="647" xlink:href="../Downloads/zxc.PNG"  transform="matrix(0.7923 0 0 0.7923 -25.1272 -32.4988)">
+	</image>
+</g>
+<g id="Layer_4">
+	<circle fill="#78E08F" cx="116" cy="42.5" r="22.5"/>
+	<circle fill="#78E08F" cx="181" cy="42.5" r="22.5"/>
+</g>
+</svg>

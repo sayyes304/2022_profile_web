@@ -42,19 +42,31 @@
             gap: 3rem;
         }
         div.contents_image {
-            width: 17rem;
-            height: 17rem;
+            width: 16rem;
+            height: 16rem;
             border-radius: 50%;
-            background-image: url('./img/sherlock.PNG');
+            background-image: url('./img/mych.png');
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size: 90%;
             background-position: center center;
-            border: 0.5rem solid #fff;
+            background-color: #78e08f;
+            /* border: 0.4rem solid white; */
         }
         div.contents_info {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+        }
+        p.resume_detail {
+            color: grey; 
+            font-weight: 300;
+             font-size: 1.2rem; 
+             padding-top:.2rem; 
+             padding-left: .5rem;
+        }
+        summary{
+            cursor: pointer;
+            display: inline-block;
         }
         span.info_name { 
             font-family: 'Cairo', sans-serif;
@@ -70,7 +82,7 @@
             display: block;
             border-radius: 2rem;
             /* background: linear-gradient(141deg, rgba(0,174,141,1) 0%, rgba(0,133,139,1) 100%); */
-            background: #FFEECA;
+            background: #fff4d4;
             color: #4B4453;
             font-size: 1.2rem;
             padding: 0.6rem 3rem;
@@ -137,7 +149,7 @@
         }
 
         .tab_btn_box > input[type='radio']:checked + label {
-            background-color : #70A1FF;
+            background-color : #78e08f;
             color            : white;
         }
 
@@ -146,9 +158,9 @@
         }
 
         .aboutme_name > span {
-            color: black;
+             color: #78e08f; 
             font-family: 'Titillium Web', sans-serif;
-            font-size: 4rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
         span.ul_effect {position: relative;}
@@ -156,18 +168,19 @@
             content: '';
             position: absolute;
             right: 0;
-            bottom: .5rem;
-            border-bottom: .3rem solid #70A1FF;
-            width: 11rem;
+            bottom: .2rem;
+            border-bottom: .3rem solid #78e08f;
+            width: 7.5rem;
         }
         .aboutme_job {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            margin-bottom: 1.6rem;
+            margin: 1.6rem 0;
         }
         .aboutme_job > span {
             font-size: 1.5rem;
+            font-weight: bold;
             color: #4F4F4F;
         }
         .aboutme_comment {margin-bottom: 2.4rem;}
@@ -196,16 +209,17 @@
             font-size: 1.7rem;
             font-weight: bold;
             padding-left: .5rem;
-            margin-bottom: 1.2rem;
-            border-left: .3rem solid #70A1FF;
+            margin-bottom: 1rem;
+            border-left: .3rem solid #78e08f;
         }
+
 
         div.key_skill_wrap {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             flex-wrap: wrap;
-            margin-bottom: 2.4rem;
+            margin-bottom: 1.5rem;
         }
 
         .key_skill{
@@ -214,6 +228,14 @@
             color:white;
             border-radius: 2rem;
             padding:0.4rem 0.9rem;
+            margin: 0.3rem 0.4rem;
+        }
+        .key_skill2{
+            display: inline-block;
+            font-size : 1.2rem;
+            color:white;
+            border-radius: 2rem;
+            padding:0.2rem 0.2rem;
             margin: 0.3rem 0.4rem;
         }
 
@@ -227,15 +249,27 @@
         }
         span.content_name {
             display: block; 
-            font-size: 1.2rem; 
+            font-size: 1.3rem; 
+            font-weight: 600;
             text-align: left; 
             width: 100%; 
             padding-left: 1rem;
             padding-bottom: .2rem;
+            padding-top: .2rem;
         }
+
+        span.content_skill{
+            display: block; 
+            font-size: 1.2rem; 
+            text-align: left; 
+            width: 100%; 
+            padding-left: 1rem;
+            margin-top: .5rem;
+        }
+
         div.bar_border {
             width: 100%;
-            height: 2rem;
+            height: 1rem;
             background-color: #f1f1f1;
             overflow: hidden;
             border-radius: 2rem;
@@ -243,32 +277,32 @@
         
         }
         div.bar_fill {
-            height: 2rem;
-            background: linear-gradient(278deg, rgba(124,119,199,1) 0%, rgba(0,190,194,1) 54%, rgba(0,212,255,1) 100%);
-            line-height: 2rem;
+            height: 1rem;
+            background: #78e08f;
+            line-height: 1rem;
             color: white;
             transition: all ease .3s;
         }
 
-        div.resume_download_wrap {
+        /* div.resume_download_wrap {
             width: 100%;
             text-align: center;
             margin-bottom: 2.4rem;
             background-color: #F1F1F1;
             padding: 1rem;
             border-radius: .5rem;
-        }
+        } */
         div.resume_title {
             font-family: 'Titillium Web', sans-serif;
             font-weight: bold;
-            font-size: 3rem;
+            font-size: 2rem;
         }
 
         div.resume_box {
             display: flex;
             flex-direction: column;
             padding: 1rem;
-            height: 28rem;
+            height: 40rem;
             overflow: auto;
         }
         div.resume_contents {
@@ -305,22 +339,21 @@
             padding: 1rem 2rem;
             border-radius: 0.5rem;
             color:white;
-            background-color: #70A1FF;
+            background-color: #78e08f;
         }
         
-
         /* 반응형 웹 디자인 Responsive Web Desing */
         /* 1. Smart Phone */
-        @media (min-width: 320px) and (max-width:768px){
+        /* @media (min-width: 320px) and (max-width:768px){ */
             /* 글자크기를 스마트폰에서 봤을 땐 작게보이게 설정 */
-            html, body{font-size : 53%;}
+            /* html, body{font-size : 53%;} */
             /* 좌측 카드만 나오고 나머지는 오른쪽은 나오지 않게 설정 */
-            div.intro_box {display: none;}
+            /* div.intro_box {display: none;}
             div.wrapper{
                 justify-content: center;
                 align-items: center;
             }
-        }
+        } */
         
         
     </style>
@@ -341,12 +374,12 @@
 
             <!-- card profile local-->
             <div class="contents_local">
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="far fa-map"></i>
                 <span class="info_local"> Gwang-Ju, South Korea</span>
             </div>
 
             <div class="contents_connect">
-                <a>yhs7409@naver.com</a>
+                <a><i class="far fa-envelope"></i> 200793@jnu.ac.kr</a>
                 
             </div>
 
@@ -382,13 +415,15 @@
                     <input type="radio" name="tabmenu" id="tab01" checked>
                     <label for="tab01"><i class="fab fa-instagram"></i> About Me</label>
                     <input type="radio" name="tabmenu" id="tab02">
-                    <label for="tab02">Skills</label>
+                    <label for="tab02">Tech Skills</label>
                     <input type="radio" name="tabmenu" id="tab03">
-                    <label for="tab03">Resume</label>
+                    <label for="tab03">Experience</label>
                     <input type="radio" name="tabmenu" id="tab04">
-                    <label for="tab04">License</label>
+                    <label for="tab04">Career</label>
                     <input type="radio" name="tabmenu" id="tab05">
-                    <label for="tab05">menu2</label>
+                    <label for="tab05">Project</label>
+                    <input type="radio" name="tabmenu">
+                    <label for="tab06" style="border: solid .2rem #78e08f; color: #78e08f; text-align: center;"><a href="pdf/test.pdf" download><i class="fas fa-download"></i> Resume</a></label>
                 </div>
             </div>
     
@@ -397,10 +432,10 @@
                 <!--box01 = 1st(About Me) contents, box 02 = Skills ... -->
                 <div class="tab_box box01" style="display: block;">
                     <div class="aboutme_name">
-                        <span>SEI <span class="ul_effect">KANG</span></span>
+                        <span style="font-size: 1.7rem; color: black;">끊임없이 도전하는<br></span> <span>개발자 강세이입니다.</span>
                     </div>
                     <div class="aboutme_job">
-                        <span>Software Engineering Student</span>
+                        <span>"Nothing is impossible, the word itself says 'I'm possible' "</span>
                     </div>
                     <div class="aboutme_comment">
                         <span>Hi, my name is <span class="main-color">Sei Kang</span> and I'm a <span class="main-color">software engineering student</span>. <br> Welcome to my personal website. Do you want to know about me? <br>Check out my <span class='main-color'>online resume</span>.</span>
@@ -411,103 +446,51 @@
                     </div>
                 </div>
                 <div class="tab_box box02">
-                    <div class="contents_title">Key Skills</div>
+                    <div class="contents_title">Programming</div>
                     <div class="key_skill_wrap">
-                        <span class="key_skill" style="background-color: #EC8940;">VR/AR</span>
-                        <span class="key_skill" style="background-color: #00BEC2;">App Develop</span>
+                        <span class="key_skill" style="background-color: #FFDE82;">JAVA</span>
+                        <span class="key_skill" style="background-color: hsl(29, 100%, 59%);">C</span>
+                        <span class="key_skill" style="background-color: #61ABFF;">Github</span>
+                    </div>
+                    <div class="contents_title">Design</div>
+                    <div class="key_skill_wrap">
+                        <span class="key_skill2"><img src="img/AiLogo.png" width="35" height="35"></span>
+                        <span class="key_skill2"><img src="img/PrLogo.png" width="35" height="35"></span>
+                        <span class="key_skill2"><img src="img/PsLogo.png" width="35" height="35"></span>
+                        <span class="key_skill2"><img src="img/XdLogo.png" width="35" height="35"></span>
+                        <span class="key_skill2"><img src="img/BlenderLogo.png" width="35" height="35"></span>
                     </div>
 
                     <div class="contents_title">My Skills</div>
                     <div class="skill_bar_wrap">
                         <div class="contents">
-                            <span class="content_name">VR/AR</span>
+                            <span class="content_name">JAVA</span>
                             <div class="bar_border">
-                                <div class="bar_fill" style="width: 10%">10%</div>
+                                <div class="bar_fill" style="width: 50%">50%</div>
                             </div>
+                            <span class="content_skill">JAVA 기초, Swing의 기본 적인 문법에 대해 알고 있습니다. </span>
                         </div>    
 
                         <div class="contents">
-                            <span class="content_name">App Develop</span>
+                            <span class="content_name">C</span>
                             <div class="bar_border">
                                 <div class="bar_fill" style="width: 40%">40%</div>
                             </div>
+                            <span class="content_skill">C 기본 적인 문법에 대해 알고 있으며, 자료구조를 C로 공부하였습니다. </span>
                         </div>   
                         
                         <div class="contents">
-                            <span class="content_name">C++</span>
+                            <span class="content_name">Github</span>
                             <div class="bar_border">
-                                <div class="bar_fill" style="width: 60%">60%</div>
+                                <div class="bar_fill" style="width: 30%">30%</div>                             
                             </div>
+                            <span class="content_skill">개인 프로젝트 및 협업을 github을 통해 진행하였습니다. </span>
                         </div>    
-
-                        <div class="contents">
-                            <span class="content_name">Java</span>
-                            <div class="bar_border">
-                                <div class="bar_fill" style="width: 60%">60%</div>
-                            </div>
-                        </div>   
-   
+                        <span class="content_skill"><br>이외에도 <span style="font-weight: bold;">C#, javascript, python, vue.js </span>등을 계속해서 공부할 계획입니다.  </span>
+                   
                     </div>
                 </div>
                 <div class="tab_box box03">
-                    <div class="resume_download_wrap">
-                        <div class="resume_title">Online Resume</div>
-                    <a href="#" class="btn_download">Download PDF Version</a>
-                    </div>
-                    
-                    <div class="resume_box">
-                        <!--교육 경력 -->
-                        <div class="resume_contents">                       
-                            <div class="contents_title">교육 경력</div>
-                            <!-- 교육 - 1st paragraph-->
-                            <div class="content_info">
-                                <div class="first_floor">
-                                    <span>AI+X 대학생 코딩캠프</span>
-                                    <span>2022.01.05 ~ 07</span>
-                                </div>
-                                <div class="second-floor">
-                                    광주전남지역혁신플랫폼
-                                </div>
-                            </div>
-                            <!-- 교육 - 2nd paragraph -->
-                            <div class="content_info">
-                                <div class="first_floor">
-                                    <span>AR/VR 코딩교육</span>
-                                    <span>2022.01.05 ~ 07</span>
-                                </div>
-                                <div class="second-floor">
-                                    전남대학교공학혁신센터
-                                </div>
-                            </div> 
-                        </div>  
-
-                        <!--수상 경력 -->
-                        <div class="resume_contents">
-                            <div class="contents_title">수상 경력</div>
-                            <!-- 수상 - 1st paragraph-->
-                            <div class="content_info">
-                                <div class="first_floor">
-                                    <span>AI+X 대학생 코딩캠프</span>
-                                    <span>2022.01.05 ~ 07</span>
-                                </div>
-                                <div class="second-floor">
-                                    광주전남지역혁신플랫폼
-                                </div>
-                            </div>
-                            <!-- 수상 - 2nd paragraph -->
-                            <div class="content_info">
-                                <div class="first_floor">
-                                    <span>AR/VR 코딩교육</span>
-                                    <span>2022.01.05 ~ 07</span>
-                                </div>
-                                <div class="second-floor">
-                                    전남대학교공학혁신센터
-                                </div>
-                            </div> 
-                        </div>  
-                    </div>
-                </div>
-                <div class="tab_box box04">
                     <!--자격증 경력 -->
                     <div class="resume_contents">
                         <div class="contents_title">자격증 경력</div>
@@ -524,7 +507,7 @@
                         <!-- 수상 - 2nd paragraph -->
                         <div class="content_info">
                             <div class="first_floor">
-                                <span>AR/VR 코딩교육</span>
+                                <span>메타버스 크리에</span>
                                 <span>2022.01.05 ~ 07</span>
                             </div>
                             <div class="second-floor">
@@ -533,7 +516,110 @@
                         </div> 
                     </div>  
                 </div>
-                <div class="tab_box box05"></div>
+                <div class="tab_box box04">
+                    <!-- <div class="resume_download_wrap">
+                        <div class="resume_title">Online Resume</div>
+                    <a href="#" class="btn_download">Download PDF Version</a>
+                    </div> -->
+                    
+                    <div class="resume_box">
+                        <!--교육 경력 -->
+                        <div class="resume_contents">                       
+                            <div class="contents_title">교육 경력</div>
+                            <!-- 교육 - 1st paragraph-->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>
+                                        <details>
+                                            <summary>AI+X 코딩캠프</summary>
+                                            <p class="resume_detail">내부에 넣을 내용을 입력해주세요</p>
+                                        </details>
+                                    </span>
+                                    <span>2022.01.05 ~ 07</span>
+                                </div>
+                                <div class="second-floor">
+                                    광주전남지역혁신플랫폼
+                                </div>
+                            </div>
+                            <!-- 교육 - 2nd paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>
+                                        <details>
+                                            <summary>메타버스 크리에이터 양성교육</summary>
+                                            <p class="resume_detail">내부에 넣을 내용을 입력해주세요</p>
+                                        </details>
+                                    </span>
+                                    <span>2021.11.26 ~ 28</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대 WE-UP 사업단
+                                </div>
+                            </div> 
+                            <!-- 교육 - 3rd paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>
+                                        <details>
+                                            <summary>공학 소프트웨어(VR코딩 심화)교육</summary>
+                                            <p class="resume_detail">내부에 넣을 내용을 입력해주세요</p>
+                                        </details>
+                                    </span>
+                                    <span>2021.02.15 ~ 18</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대학교 공학교육혁신센터 
+                                </div>
+                            </div> 
+                            <!-- 교육 - 4th paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>
+                                        <details>
+                                            <summary>유니티로 만드는 AI제작 및 제어</summary>
+                                            <p class="resume_detail">내부에 넣을 내용을 입력해주세요</p>
+                                        </details>
+                                         </span>
+                                    <span>2021.01.25 ~ 02.04</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대 WE-UP 사업단
+                                </div>
+                                
+                            </div> 
+                        </div>  
+
+                        <!--수상 경력 -->
+                        <div class="resume_contents">
+                            <div class="contents_title">수상 경력</div>
+                            <!-- 수상 - 1st paragraph-->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>(공학계열학생교류 프로그램 콘텐츠 부문) 우수상</span>
+                                    <span>2021.02</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대학교 공학교육혁신센터
+                                </div>
+                            </div>
+                            <!-- 수상 - 2nd paragraph -->
+                            <div class="content_info">
+                                <div class="first_floor">
+                                    <span>(2021 공학수기 공모전) 가작 </span>
+                                    <span>2021.12</span>
+                                </div>
+                                <div class="second-floor">
+                                    전남대학교공학혁신센터
+                                </div>
+                            </div> 
+                        </div>  
+                    </div>
+                </div>
+                <div class="tab_box box05">                   
+                        <div class="contents_title">개인 프로젝트</div>     
+                        <div></div>  
+                        <div class="contents_title">팀 프로젝트</div>       
+                </div>
             </div>
         </div>
     </div>
@@ -552,9 +638,9 @@
     });
 
     $(document).on('click', '.btn_view_resume', function() {
-        $('#tab03').prop('checked', true);
+        $('#tab04').prop('checked', true);
         $('.tab_box').css('display', 'none');
-        $('.box03').css('display', 'block');
+        $('.box04').css('display', 'block');
 
     });
 </script> 
