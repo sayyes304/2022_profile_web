@@ -1,0 +1,86 @@
+.gallerylist{
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+ul{font-size: 0;}
+
+ul > li{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+ul > li > div.screen_wrap{
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 5px 15px 20px 15px;
+}
+
+ul > li > div.screen_wrap .screen {
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+    border-radius: 5%;
+}
+
+ul > li > div.screen_wrap .screen .top {
+    position: absolute;
+    bottom: 150%;
+    left : 5px;
+    padding-bottom: 5px;
+    z-index: 2;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    transition: all .5s;
+}
+
+ul > li > div.screen_wrap .screen .bottom {
+    position: absolute;
+    top: 150%;
+    z-index: 2;
+    color: #fff;
+    font-size: 12px;
+    transition: all .5s;
+    padding: 0 5px;
+}
+
+ul > li > div.screen_wrap .screen img {
+    width: 100%;
+}
+
+ul > li > div.screen_wrap:hover .top { bottom: 52%;}
+ul > li > div.screen_wrap:hover .bottom { top: 52%;}
+
+ul > li > div.screen_wrap .screen::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #78e08f;
+    z-index: 1;
+    opacity: 0;
+    border-radius: 5%;
+    transition: all .5s;
+}
+
+ul > li > div.screen_wrap .screen .bottom .screen_detail{
+    margin-top: 5px;
+    background-color: white;
+    opacity: 60%; 
+    border-radius: 15%;
+    width: 50px;
+    padding: 2px;
+}
+
+ul > li > div.screen_wrap:hover .screen::after {
+    opacity: 1;
+}
