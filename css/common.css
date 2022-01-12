@@ -14,6 +14,7 @@ body {
     padding: 0;
     color: #2F3138;
     background-color: #f1f1f1;
+    /* background-color: #fff; */
     height: 100vh;
 }
 ul, p {

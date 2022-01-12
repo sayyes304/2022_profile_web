@@ -30,6 +30,7 @@ ul > li > div.screen_wrap .screen {
 
 ul > li > div.screen_wrap .screen .top {
     position: absolute;
+    padding-bottom: 70px;
     bottom: 150%;
     left : 5px;
     padding-bottom: 5px;
@@ -45,17 +46,18 @@ ul > li > div.screen_wrap .screen .bottom {
     top: 150%;
     z-index: 2;
     color: #fff;
-    font-size: 12px;
+    font-size: 11px;
     transition: all .5s;
     padding: 0 5px;
 }
+
 
 ul > li > div.screen_wrap .screen img {
     width: 100%;
 }
 
-ul > li > div.screen_wrap:hover .top { bottom: 52%;}
-ul > li > div.screen_wrap:hover .bottom { top: 52%;}
+ul > li > div.screen_wrap:hover .top { bottom: 73%;}
+ul > li > div.screen_wrap:hover .bottom { top: 32%;}
 
 ul > li > div.screen_wrap .screen::after {
     content: '';
@@ -72,13 +74,16 @@ ul > li > div.screen_wrap .screen::after {
     transition: all .5s;
 }
 
+
 ul > li > div.screen_wrap .screen .bottom .screen_detail{
     margin-top: 5px;
     background-color: white;
     opacity: 60%; 
-    border-radius: 15%;
-    width: 50px;
+    border-radius: 2rem;
+    width: 56px;
     padding: 2px;
+    margin-right: 4px;
+    text-align: center;
 }
 
 ul > li > div.screen_wrap:hover .screen::after {
