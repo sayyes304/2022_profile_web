@@ -1,5 +1,5 @@
 # profile web
-## html, css, js
+### html, css, js
 ### netlify
 
 https://sayfrog.netlify.app/
